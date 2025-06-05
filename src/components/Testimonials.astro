@@ -1,0 +1,107 @@
+---
+const testimonials = [
+  {
+    name: "Carlos Martínez",
+    role: "Productor de Banano, Zona Bananera",
+    quote: "Desde que implementamos el sistema de riego diseñado por Martín, hemos reducido nuestro consumo de agua en un 35% y aumentado la productividad. Su conocimiento de las condiciones específicas de nuestra región hace la diferencia.",
+    image: "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+  },
+  {
+    name: "Ana María Rodríguez",
+    role: "Gerente Agrícola, Palmar del Río",
+    quote: "Trabajar con Martín ha sido una experiencia excepcional. Su equipo no solo instaló nuestro sistema de riego, sino que nos capacitó completamente en su uso y mantenimiento. La inversión se recuperó en menos de dos años.",
+    image: "https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+  },
+  {
+    name: "José Luis Mendoza",
+    role: "Agricultor de Arroz, Córdoba",
+    quote: "Después de tres temporadas de sequía, contactamos a Martín para implementar un sistema de riego más eficiente. El resultado ha sido extraordinario, logrando mantener la producción incluso en condiciones climáticas adversas.",
+    image: "https://images.pexels.com/photos/2379005/pexels-photo-2379005.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+  }
+];
+---
+
+<section class="py-20 bg-white">
+  <div class="container mx-auto px-4">
+    <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+      <div class="flex items-center justify-center gap-2 mb-4">
+        <div class="h-1 w-12 bg-primary"></div>
+        <h2 class="text-lg font-medium text-primary">Testimonios</h2>
+        <div class="h-1 w-12 bg-primary"></div>
+      </div>
+      
+      <h3 class="text-3xl md:text-4xl font-bold mb-6">Lo Que Dicen Nuestros Clientes</h3>
+      
+      <p class="text-gray-700">
+        Estos son algunos testimonios de agricultores y empresas que han confiado en nuestra experiencia para implementar soluciones de riego eficientes.
+      </p>
+    </div>
+    
+    <div class="testimonials-slider" data-aos="fade-up">
+      <div class="swiper-container">
+        <div class="swiper-wrapper">
+          {testimonials.map(testimonial => (
+            <div class="swiper-slide">
+              <div class="bg-gray-50 rounded-lg p-8 shadow-lg h-full">
+                <div class="flex items-center gap-4 mb-6">
+                  <img 
+                    src={testimonial.image} 
+                    alt={testimonial.name} 
+                    class="w-16 h-16 rounded-full object-cover"
+                  />
+                  <div>
+                    <h4 class="font-bold text-lg">{testimonial.name}</h4>
+                    <p class="text-gray-600 text-sm">{testimonial.role}</p>
+                  </div>
+                </div>
+                
+                <blockquote class="relative">
+                  <svg class="absolute -top-2 -left-2 h-8 w-8 text-primary/20" fill="currentColor" viewBox="0 0 32 32">
+                    <path d="M10 8c-3.31 0-6 2.69-6 6v10h10V14H8c0-1.1 0.9-2 2-2V8zm12 0c-3.31 0-6 2.69-6 6v10h10V14h-6c0-1.1 0.9-2 2-2V8z"></path>
+                  </svg>
+                  <p class="pl-6 text-gray-700 italic">{testimonial.quote}</p>
+                </blockquote>
+              </div>
+            </div>
+          ))}
+        </div>
+        <div class="swiper-pagination mt-8"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  import Swiper from 'swiper';
+  import { Pagination, Autoplay } from 'swiper/modules';
+  import 'swiper/css';
+  import 'swiper/css/pagination';
+  
+  document.addEventListener('DOMContentLoaded', () => {
+    new Swiper('.swiper-container', {
+      modules: [Pagination, Autoplay],
+      slidesPerView: 1,
+      spaceBetween: 30,
+      loop: true,
+      autoplay: {
+        delay: 5000,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      breakpoints: {
+        640: {
+          slidesPerView: 1,
+        },
+        768: {
+          slidesPerView: 2,
+        },
+        1024: {
+          slidesPerView: 3,
+        },
+      },
+    });
+  });
+</script>
