@@ -1,56 +1,75 @@
 ---
+import {
+  Modal,
+  ModalHeader,
+  ModalBody,
+  ModalFooter,
+  Button,
+} from 'free-astro-components';
 const projects = [
   {
-    title: "Finca Productora de Banano",
-    location: "Zona Bananera, Magdalena",
-    description: "Implementación de sistema de riego por goteo para 50 hectáreas de cultivo de banano, logrando un ahorro del 35% en consumo de agua.",
-    category: "riego-goteo",
-    image: "https://images.pexels.com/photos/2749165/pexels-photo-2749165.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+    title: 'Finca Productora de Banano',
+    location: 'Zona Bananera, Magdalena',
+    description:
+      'Implementación de sistema de riego por goteo para 50 hectáreas de cultivo de banano, logrando un ahorro del 35% en consumo de agua.',
+    category: 'riego-goteo',
+    image:
+      'https://images.pexels.com/photos/2749165/pexels-photo-2749165.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
   },
   {
-    title: "Cultivo de Algodón",
-    location: "Valledupar, Cesar",
-    description: "Diseño e instalación de sistema de aspersión para 80 hectáreas de algodón, con control automatizado y monitoreo remoto.",
-    category: "aspersion",
-    image: "https://images.pexels.com/photos/1483880/pexels-photo-1483880.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+    title: 'Cultivo de Algodón',
+    location: 'Valledupar, Cesar',
+    description:
+      'Diseño e instalación de sistema de aspersión para 80 hectáreas de algodón, con control automatizado y monitoreo remoto.',
+    category: 'aspersion',
+    image:
+      'https://images.pexels.com/photos/1483880/pexels-photo-1483880.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
   },
   {
-    title: "Arroz Tecnificado",
-    location: "Montería, Córdoba",
-    description: "Sistema de riego por inundación controlada para 120 hectáreas de arroz, con tecnología de nivelación láser y gestión eficiente del recurso hídrico.",
-    category: "inundacion",
-    image: "https://images.pexels.com/photos/247599/pexels-photo-247599.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+    title: 'Arroz Tecnificado',
+    location: 'Montería, Córdoba',
+    description:
+      'Sistema de riego por inundación controlada para 120 hectáreas de arroz, con tecnología de nivelación láser y gestión eficiente del recurso hídrico.',
+    category: 'inundacion',
+    image:
+      'https://images.pexels.com/photos/247599/pexels-photo-247599.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
   },
   {
-    title: "Palma de Aceite",
-    location: "María La Baja, Bolívar",
-    description: "Implementación de sistema de riego por microaspersión para 200 hectáreas de palma de aceite, optimizando el uso del agua en épocas de sequía.",
-    category: "microaspersion",
-    image: "https://images.pexels.com/photos/175428/pexels-photo-175428.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+    title: 'Palma de Aceite',
+    location: 'María La Baja, Bolívar',
+    description:
+      'Implementación de sistema de riego por microaspersión para 200 hectáreas de palma de aceite, optimizando el uso del agua en épocas de sequía.',
+    category: 'microaspersion',
+    image:
+      'https://images.pexels.com/photos/175428/pexels-photo-175428.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
   },
   {
-    title: "Hortalizas Orgánicas",
-    location: "Santa Marta, Magdalena",
-    description: "Sistema de riego por goteo con fertirriego para 15 hectáreas de hortalizas orgánicas, mejorando la eficiencia en la aplicación de nutrientes.",
-    category: "riego-goteo",
-    image: "https://images.pexels.com/photos/1002703/pexels-photo-1002703.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+    title: 'Hortalizas Orgánicas',
+    location: 'Santa Marta, Magdalena',
+    description:
+      'Sistema de riego por goteo con fertirriego para 15 hectáreas de hortalizas orgánicas, mejorando la eficiencia en la aplicación de nutrientes.',
+    category: 'riego-goteo',
+    image:
+      'https://images.pexels.com/photos/1002703/pexels-photo-1002703.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
   },
   {
-    title: "Cultivo de Maíz",
-    location: "Sincelejo, Sucre",
-    description: "Instalación de pivote central para 100 hectáreas de maíz, permitiendo una aplicación uniforme del agua y reducción de costos operativos.",
-    category: "pivote",
-    image: "https://images.pexels.com/photos/5170154/pexels-photo-5170154.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-  }
+    title: 'Cultivo de Maíz',
+    location: 'Sincelejo, Sucre',
+    description:
+      'Instalación de pivote central para 100 hectáreas de maíz, permitiendo una aplicación uniforme del agua y reducción de costos operativos.',
+    category: 'pivote',
+    image:
+      'https://images.pexels.com/photos/5170154/pexels-photo-5170154.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+  },
 ];
 
 const categories = [
-  { id: "todos", label: "Todos" },
-  { id: "riego-goteo", label: "Riego por Goteo" },
-  { id: "aspersion", label: "Aspersión" },
-  { id: "microaspersion", label: "Microaspersión" },
-  { id: "inundacion", label: "Inundación" },
-  { id: "pivote", label: "Pivote Central" }
+  { id: 'todos', label: 'Todos' },
+  { id: 'riego-goteo', label: 'Riego por Goteo' },
+  { id: 'aspersion', label: 'Aspersión' },
+  { id: 'microaspersion', label: 'Microaspersión' },
+  { id: 'inundacion', label: 'Inundación' },
+  { id: 'pivote', label: 'Pivote Central' },
 ];
 ---
 
@@ -62,80 +81,166 @@ const categories = [
         <h2 class="text-lg font-medium text-primary">Nuestros Proyectos</h2>
         <div class="h-1 w-12 bg-primary"></div>
       </div>
-      
-      <h3 class="text-3xl md:text-4xl font-bold mb-6">Transformando la Agricultura en la Costa Caribe</h3>
-      
+
+      <h3 class="text-3xl md:text-4xl font-bold mb-6">
+        Transformando la Agricultura en la Costa Caribe
+      </h3>
+
       <p class="text-gray-700">
-        Conozca algunos de nuestros proyectos más destacados, donde hemos implementado soluciones de riego eficientes adaptadas a las necesidades específicas de cada cliente.
+        Conozca algunos de nuestros proyectos más destacados, donde hemos
+        implementado soluciones de riego eficientes adaptadas a las necesidades
+        específicas de cada cliente.
       </p>
     </div>
-    
+
     <!-- Filter Buttons -->
     <div class="flex flex-wrap justify-center gap-3 mb-12" data-aos="fade-up">
-      {categories.map(category => (
-        <button 
-          class="filter-btn px-4 py-2 rounded-md text-sm font-medium transition-colors duration-300 bg-white border border-gray-200 hover:bg-primary hover:text-white"
-          data-category={category.id}
-        >
-          {category.label}
-        </button>
-      ))}
+      {
+        categories.map((category) => (
+          <button
+            class="filter-btn px-4 py-2 rounded-md text-sm font-medium transition-colors duration-300 bg-white border border-gray-200 hover:bg-primary hover:text-white"
+            data-category={category.id}
+          >
+            {category.label}
+          </button>
+        ))
+      }
     </div>
-    
+
     <!-- Projects Grid -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 project-grid">
-      {projects.map((project, index) => (
-        <div 
-          class="project-item bg-white rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:-translate-y-2"
-          data-category={project.category}
-          data-aos="fade-up" 
-          data-aos-delay={index * 100}
-        >
-          <div class="relative overflow-hidden h-64">
-            <img 
-              src={project.image} 
-              alt={project.title} 
-              class="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
-            />
-          </div>
-          
-          <div class="p-6">
-            <div class="flex justify-between items-start mb-3">
-              <h4 class="text-xl font-bold">{project.title}</h4>
-              <span class="bg-primary/10 text-primary text-xs px-3 py-1 rounded-full font-medium">
-                {
-                  project.category === "riego-goteo" ? "Goteo" :
-                  project.category === "aspersion" ? "Aspersión" :
-                  project.category === "microaspersion" ? "Microaspersión" :
-                  project.category === "inundacion" ? "Inundación" :
-                  project.category === "pivote" ? "Pivote Central" : ""
-                }
-              </span>
+    <div
+      class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 project-grid"
+    >
+      {
+        projects.map((project, index) => (
+          <div
+            class="project-item bg-white rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:-translate-y-2"
+            data-category={project.category}
+            data-aos="fade-up"
+            data-aos-delay={index * 100}
+          >
+            <div class="relative overflow-hidden h-64">
+              <img
+                src={project.image}
+                alt={project.title}
+                class="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+              />
             </div>
-            
-            <p class="text-gray-500 text-sm mb-4">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 inline-block mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-              </svg>
-              {project.location}
-            </p>
-            
-            <p class="text-gray-700 mb-6">{project.description}</p>
-            
-            <button class="view-project-btn text-primary hover:text-primary-dark font-medium inline-flex items-center transition duration-300 group">
-              Ver detalles
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" viewBox="0 0 20 20" fill="currentColor">
-                <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
-              </svg>
-            </button>
+
+            <div class="p-6">
+              <div class="flex justify-between items-start mb-3">
+                <h4 class="text-xl font-bold">{project.title}</h4>
+                <span class="bg-primary/10 text-primary text-xs px-3 py-1 rounded-full font-medium">
+                  {project.category === 'riego-goteo'
+                    ? 'Goteo'
+                    : project.category === 'aspersion'
+                      ? 'Aspersión'
+                      : project.category === 'microaspersion'
+                        ? 'Microaspersión'
+                        : project.category === 'inundacion'
+                          ? 'Inundación'
+                          : project.category === 'pivote'
+                            ? 'Pivote Central'
+                            : ''}
+                </span>
+              </div>
+
+              <p class="text-gray-500 text-sm mb-4">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-4 w-4 inline-block mr-1"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                  />
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                  />
+                </svg>
+                {project.location}
+              </p>
+
+              <p class="text-gray-700 mb-6">{project.description}</p>
+
+              <Button
+                label="Ver detalles"
+                data-modal-trigger={`modal-proyecto-${index}`}
+                class="view-project-btn text-primary hover:text-primary-dark font-medium inline-flex items-center transition duration-300 group"
+              />
+            </div>
+
+            {/* Modal para este proyecto */}
+            <Modal id={`modal-proyecto-${index}`} size="md" tabindex="-1">
+              <ModalHeader>
+                <h4>{project.title}</h4>
+              </ModalHeader>
+              <ModalBody>
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  class="w-full h-48 object-cover rounded mb-4"
+                />
+                <p class="text-gray-500 text-sm mb-2">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-4 w-4 inline-block mr-1"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                    />
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                    />
+                  </svg>
+                  {project.location}
+                </p>
+                <p class="text-gray-700">{project.description}</p>
+                <span class="block mt-4 bg-primary/10 text-primary text-xs px-3 py-1 rounded-full font-medium w-max">
+                  {project.category === 'riego-goteo'
+                    ? 'Goteo'
+                    : project.category === 'aspersion'
+                      ? 'Aspersión'
+                      : project.category === 'microaspersion'
+                        ? 'Microaspersión'
+                        : project.category === 'inundacion'
+                          ? 'Inundación'
+                          : project.category === 'pivote'
+                            ? 'Pivote Central'
+                            : ''}
+                </span>
+              </ModalBody>
+              <ModalFooter>
+                <Button label="Cerrar" data-modal-close />
+              </ModalFooter>
+            </Modal>
           </div>
-        </div>
-      ))}
+        ))
+      }
     </div>
-    
+
     <div class="text-center mt-12" data-aos="fade-up">
-      <a href="#contacto" class="inline-block bg-primary hover:bg-primary-dark text-white font-medium py-3 px-6 rounded-md transition duration-300 shadow-lg">
+      <a
+        href="#contacto"
+        class="inline-block bg-primary hover:bg-primary-dark text-white font-medium py-3 px-6 rounded-md transition duration-300 shadow-lg"
+      >
         Solicitar una Visita Técnica
       </a>
     </div>
@@ -147,31 +252,34 @@ const categories = [
   document.addEventListener('DOMContentLoaded', () => {
     const filterBtns = document.querySelectorAll('.filter-btn');
     const projectItems = document.querySelectorAll('.project-item');
-    
+
     // Set "Todos" as active by default
     const allButton = document.querySelector('[data-category="todos"]');
     if (allButton) {
       allButton.classList.add('bg-primary', 'text-white');
       allButton.classList.remove('bg-white');
     }
-    
-    filterBtns.forEach(btn => {
+
+    filterBtns.forEach((btn) => {
       btn.addEventListener('click', () => {
         // Remove active class from all buttons
-        filterBtns.forEach(b => {
+        filterBtns.forEach((b) => {
           b.classList.remove('bg-primary', 'text-white');
           b.classList.add('bg-white');
         });
-        
+
         // Add active class to clicked button
         btn.classList.add('bg-primary', 'text-white');
         btn.classList.remove('bg-white');
-        
+
         const category = btn.getAttribute('data-category');
-        
+
         // Show/hide projects based on category
-        projectItems.forEach(item => {
-          if (category === 'todos' || item.getAttribute('data-category') === category) {
+        projectItems.forEach((item) => {
+          if (
+            category === 'todos' ||
+            item.getAttribute('data-category') === category
+          ) {
             item.style.display = 'block';
           } else {
             item.style.display = 'none';
@@ -179,14 +287,19 @@ const categories = [
         });
       });
     });
-    
-    // Project modal (simplified for this example)
-    const viewProjectBtns = document.querySelectorAll('.view-project-btn');
-    viewProjectBtns.forEach(btn => {
-      btn.addEventListener('click', () => {
-        // In a real implementation, this would open a modal with project details
-        alert('En una implementación real, aquí se mostraría un modal con más detalles del proyecto.');
-      });
-    });
+  });
+
+  document.addEventListener('astro:after-swap', () => {
+    // Si usas Astro Islands, puedes necesitar este evento
+    document.body.style.overflow = '';
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      // Espera un pequeño tiempo para que el modal se cierre
+      setTimeout(() => {
+        document.body.style.overflow = '';
+      }, 100);
+    }
   });
 </script>
