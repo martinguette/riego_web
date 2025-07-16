@@ -1,38 +1,41 @@
 ---
 const services = [
   {
-    title: "Diseño de Sistemas",
-    description: "Creación de sistemas de riego personalizados según las necesidades específicas de su cultivo, suelo y condiciones climáticas de la región Caribe.",
-    icon: "design",
+    title: 'Diseño de Sistemas',
+    description:
+      'Creación de sistemas de riego personalizados según las necesidades específicas de su cultivo, suelo y condiciones climáticas de la región Caribe.',
+    icon: 'design',
     features: [
-      "Estudio topográfico y de suelos",
-      "Cálculo de necesidades hídricas",
-      "Selección de componentes óptimos",
-      "Planos detallados y especificaciones"
-    ]
+      'Diseño adaptado al terreno',
+      'Cálculo de necesidades hídricas',
+      'Selección de componentes óptimos',
+      'Planos detallados y especificaciones',
+    ],
   },
   {
-    title: "Instalación Profesional",
-    description: "Implementación experta de sistemas de riego con los más altos estándares de calidad, asegurando durabilidad y eficiencia en su funcionamiento.",
-    icon: "installation",
+    title: 'Instalación Profesional',
+    description:
+      'Implementación experta de sistemas de riego con los más altos estándares de calidad, asegurando durabilidad y eficiencia en su funcionamiento.',
+    icon: 'installation',
     features: [
-      "Equipo técnico especializado",
-      "Materiales certificados",
-      "Cumplimiento de cronogramas",
-      "Pruebas y ajustes del sistema"
-    ]
+      'Equipo técnico especializado',
+      'Materiales certificados',
+      'Cumplimiento de cronogramas',
+      'Pruebas y ajustes del sistema',
+    ],
   },
   {
-    title: "Mantenimiento y Soporte",
-    description: "Servicios de mantenimiento preventivo y correctivo para garantizar el funcionamiento óptimo y prolongar la vida útil de su sistema de riego.",
-    icon: "maintenance",
+    title: 'Garantía',
+    description:
+      'Cobertura y respaldo técnico para asegurar el rendimiento y durabilidad de su sistema de riego, con atención oportuna y soluciones confiables.',
+    icon: 'maintenance',
     features: [
-      "Inspecciones periódicas",
-      "Reparaciones rápidas",
-      "Actualización de componentes",
-      "Asesoría técnica continua"
-    ]
-  }
+      'Verificación inicial',
+      'Reparaciones cubiertas',
+      'Reemplazo de piezas',
+      'Soporte técnico',
+    ],
+  },
 ];
 ---
 
@@ -44,65 +47,130 @@ const services = [
         <h2 class="text-lg font-medium text-primary">Nuestros Servicios</h2>
         <div class="h-1 w-12 bg-primary"></div>
       </div>
-      
-      <h3 class="text-3xl md:text-4xl font-bold mb-6">Soluciones Completas de Riego Agrícola</h3>
-      
+
+      <h3 class="text-3xl md:text-4xl font-bold mb-6">
+        Soluciones Completas de Riego Agrícola
+      </h3>
+
       <p class="text-gray-700">
-        Ofrecemos servicios integrales especializados para optimizar el uso del agua en su producción agrícola, adaptados a las condiciones específicas de la Costa Caribe Colombiana.
+        Ofrecemos servicios integrales especializados para optimizar el uso del
+        agua en su producción agrícola, adaptados a las condiciones específicas
+        de la Costa Caribe Colombiana.
       </p>
     </div>
-    
+
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      {services.map((service, index) => (
-        <div 
-          class="bg-gray-50 rounded-lg p-8 shadow-lg transition-transform duration-300 hover:-translate-y-2"
-          data-aos="fade-up" 
-          data-aos-delay={index * 100}
-        >
-          <div class="bg-primary/10 text-primary rounded-full w-16 h-16 flex items-center justify-center mb-6">
-            {service.icon === "design" && (
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-              </svg>
-            )}
-            
-            {service.icon === "installation" && (
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-              </svg>
-            )}
-            
-            {service.icon === "maintenance" && (
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
-              </svg>
-            )}
-          </div>
-          
-          <h4 class="text-xl font-bold mb-4">{service.title}</h4>
-          
-          <p class="text-gray-700 mb-6">{service.description}</p>
-          
-          <ul class="space-y-2 mb-6">
-            {service.features.map(feature => (
-              <li class="flex items-start gap-2">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-primary mt-0.5" viewBox="0 0 20 20" fill="currentColor">
-                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+      {
+        services.map((service, index) => (
+          <div
+            class="bg-gray-50 rounded-lg p-8 shadow-lg transition-transform duration-300 hover:-translate-y-2"
+            data-aos="fade-up"
+            data-aos-delay={index * 100}
+          >
+            <div class="bg-primary/10 text-primary rounded-full w-16 h-16 flex items-center justify-center mb-6">
+              {service.icon === 'design' && (
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-8 w-8"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                  />
                 </svg>
-                <span>{feature}</span>
-              </li>
-            ))}
-          </ul>
-          
-          <a href="#contacto" class="inline-flex items-center text-primary hover:text-primary-dark font-medium transition duration-300 group">
-            Solicitar información
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" viewBox="0 0 20 20" fill="currentColor">
-              <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
-            </svg>
-          </a>
-        </div>
-      ))}
+              )}
+
+              {service.icon === 'installation' && (
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-8 w-8"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"
+                  />
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+                  />
+                </svg>
+              )}
+
+              {service.icon === 'maintenance' && (
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-8 w-8"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M13 10V3L4 14h7v7l9-11h-7z"
+                  />
+                </svg>
+              )}
+            </div>
+
+            <h4 class="text-xl font-bold mb-4">{service.title}</h4>
+
+            <p class="text-gray-700 mb-6">{service.description}</p>
+
+            <ul class="space-y-2 mb-6">
+              {service.features.map((feature) => (
+                <li class="flex items-start gap-2">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-5 w-5 text-primary mt-0.5"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                  <span>{feature}</span>
+                </li>
+              ))}
+            </ul>
+
+            <a
+              href="#contacto"
+              class="inline-flex items-center text-primary hover:text-primary-dark font-medium transition duration-300 group"
+            >
+              Solicitar información
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </a>
+          </div>
+        ))
+      }
     </div>
   </div>
 </section>
