@@ -9,18 +9,27 @@ const projects = [
   {
     title: 'Cultivo de platano',
     location: 'Sierra nevada de Santa Marta, Magdalena',
-    description:
-      'Implementación de sistema de riego por gravedad en 6 hectáreas de cultivo de plátano, en respuesta a las condiciones de sequía que afectaban la productividad. Se aprovechó la topografía inclinada del terreno para diseñar un sistema eficiente sin necesidad de bombeo.',
+    description: `Implementación de sistema de riego por gravedad en 6 hectáreas de cultivo de plátano, en respuesta a las condiciones de sequía que afectaban la productividad. Se aprovechó la topografía inclinada del terreno para diseñar un sistema eficiente sin necesidad de bombeo, lo que permitió: \n
+
+• Ahorro del 100% en consumo de energía eléctrica.
+
+• Reducción del 40% en el uso de recursos hídricos.
+
+• Aumento del 30% en la producción por hectárea.
+
+Una solución sostenible que mejoró el rendimiento del cultivo, redujo costos operativos y fortaleció la resiliencia frente a cambios climáticos.`,
     category: 'aspersion',
     image: '/calabazo_riego.webp',
+    description_image: '/sierra.webp',
   },
   {
-    title: 'Cultivo de pasto de corte',
-    location: 'Pedraza, Magdalena',
+    title: 'Cultivo de pasto para pastoreo ganadero',
+    location: 'Zapayán, Magdalena',
     description:
-      'En una finca de 5 hectáreas dedicada al pastoreo, a pesar de estar ubicada junto al río Magdalena, las condiciones de sequía dificultaban el abastecimiento de agua al cultivo. Se implementó un sistema de riego por aspersión tipo cañón, ideal para terrenos planos y de gran cobertura.',
+      'En una finca de 7 hectáreas destinadas a pasto para pastoreo, las condiciones de sequía afectaban la producción de forraje. Se implementó un sistema de riego por aspersión, adaptado a las características del terreno y al tipo de cultivo',
     category: 'aspersion',
     image: '/riego.webp',
+    video: 'https://youtube.com/embed/WyJnlCh4PBA?si=HzfrwtlYBv9dvpVW',
   },
   {
     title: 'Cultivo de palma de aceite',
@@ -193,6 +202,11 @@ const categories = [
                   alt={project.title}
                   class="w-full h-50 object-cover rounded mb-4"
                 />
+                <img
+                  src={project.description_image}
+                  alt={project.title}
+                  class="w-full h-50 object-cover rounded mb-4"
+                />
                 <p class="text-gray-500 text-sm mb-2">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -216,7 +230,22 @@ const categories = [
                   </svg>
                   {project.location}
                 </p>
-                <p class="text-gray-700">{project.description}</p>
+
+                {project.video && (
+                  <div class="mb-4 aspect-video">
+                    <iframe
+                      src={project.video}
+                      class="w-full h-full rounded-lg shadow-lg"
+                      frameborder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowfullscreen
+                      title={`Video de ${project.title}`}
+                    />
+                  </div>
+                )}
+                <p class="text-gray-700 whitespace-pre-line">
+                  {project.description}
+                </p>
                 <span class="block mt-4 bg-primary/10 text-primary text-xs px-3 py-1 rounded-full font-medium w-max">
                   {project.category === 'aspersion'
                     ? 'Aspersión'
