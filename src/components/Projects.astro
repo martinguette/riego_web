@@ -7,62 +7,60 @@ import {
 } from 'free-astro-components';
 const projects = [
   {
-    title: 'Finca Productora de Banano',
-    location: 'Calabazo, Magdalena',
+    title: 'Cultivo de platano',
+    location: 'Sierra nevada de Santa Marta, Magdalena',
     description:
-      'Implementación de sistema de riego por goteo para 50 hectáreas de cultivo de banano, logrando un ahorro del 35% en consumo de agua.',
-    category: 'riego-goteo',
+      'Implementación de sistema de riego por gravedad en 6 hectáreas de cultivo de plátano, en respuesta a las condiciones de sequía que afectaban la productividad. Se aprovechó la topografía inclinada del terreno para diseñar un sistema eficiente sin necesidad de bombeo.',
+    category: 'aspersion',
     image: '/calabazo_riego.webp',
   },
   {
-    title: 'Cultivo de Algodón',
-    location: 'Valledupar, Cesar',
+    title: 'Cultivo de pasto de corte',
+    location: 'Pedraza, Magdalena',
     description:
-      'Diseño e instalación de sistema de aspersión para 80 hectáreas de algodón, con control automatizado y monitoreo remoto.',
+      'En una finca de 5 hectáreas dedicada al pastoreo, a pesar de estar ubicada junto al río Magdalena, las condiciones de sequía dificultaban el abastecimiento de agua al cultivo. Se implementó un sistema de riego por aspersión tipo cañón, ideal para terrenos planos y de gran cobertura.',
     category: 'aspersion',
     image: '/riego.webp',
   },
   {
-    title: 'Arroz Tecnificado',
-    location: 'Montería, Córdoba',
+    title: 'Cultivo de palma de aceite',
+    location: 'Zona bananera, Magdalena',
     description:
-      'Sistema de riego por inundación controlada para 120 hectáreas de arroz, con tecnología de nivelación láser y gestión eficiente del recurso hídrico.',
-    category: 'inundacion',
+      'Proyecto ejecutado en 60 hectáreas con condiciones críticas de sequía. Se implementó un sistema de riego por tapón perforado, una solución altamente eficiente que permite dirigir el agua directamente a la base de cada planta',
+    category: 'tapon',
     image: '/riego1.webp',
   },
   {
-    title: 'Palma de Aceite',
-    location: 'María La Baja, Bolívar',
+    title: 'Cultivo de pasto de corte',
+    location: 'Maicao (carraipia), Guajira',
     description:
-      'Implementación de sistema de riego por microaspersión para 200 hectáreas de palma de aceite, optimizando el uso del agua en épocas de sequía.',
-    category: 'microaspersion',
+      'En una extensión de 10 hectáreas destinadas a pasto de corte, se presentaban problemas de sequía constantes, típicos de la región. Se implementó un sistema de riego por aspersión que permitió enfrentar estas condiciones climáticas.',
+    category: 'aspersion',
     image: '/riego2.webp',
   },
   {
-    title: 'Hortalizas Orgánicas',
-    location: 'Santa Marta, Magdalena',
+    title: 'Cultivo de pasto y pastoreo',
+    location: 'Calamar, Bolivar',
     description:
-      'Sistema de riego por goteo con fertirriego para 15 hectáreas de hortalizas orgánicas, mejorando la eficiencia en la aplicación de nutrientes.',
-    category: 'riego-goteo',
+      'Proyecto desarrollado en 15 hectáreas dedicadas al pastoreo, en una zona afectada por fuertes periodos de sequía. Se implementó un sistema de riego por aspersión tipo cañón, ideal para grandes extensiones y terrenos planos.',
+    category: 'aspersion',
     image: '/riego3.webp',
   },
   {
-    title: 'Cultivo de Maíz',
-    location: 'Sincelejo, Sucre',
+    title: 'Cultivo de palma de aceite',
+    location: 'Algarrobo, Magdalena',
     description:
-      'Instalación de pivote central para 100 hectáreas de maíz, permitiendo una aplicación uniforme del agua y reducción de costos operativos.',
-    category: 'pivote',
+      'En una plantación de 30 hectáreas de palma de aceite afectada por sequías frecuentes, se implementó un sistema de riego por microtubo, el cual permite aplicar el agua exclusivamente sobre la planta, evitando el riego de malezas y reduciendo el desperdicio.',
+    category: 'microtubo',
     image: '/riego4.webp',
   },
 ];
 
 const categories = [
   { id: 'todos', label: 'Todos' },
-  { id: 'riego-goteo', label: 'Riego por Goteo' },
   { id: 'aspersion', label: 'Aspersión' },
-  { id: 'microaspersion', label: 'Microaspersión' },
-  { id: 'inundacion', label: 'Inundación' },
-  { id: 'pivote', label: 'Pivote Central' },
+  { id: 'tapon', label: 'Tapón Perforado' },
+  { id: 'microtubo', label: 'Microtubo' },
 ];
 ---
 
@@ -124,17 +122,13 @@ const categories = [
               <div class="flex justify-between items-start mb-3">
                 <h4 class="text-xl font-bold">{project.title}</h4>
                 <span class="bg-primary/10 text-primary text-xs px-3 py-1 rounded-full font-medium">
-                  {project.category === 'riego-goteo'
-                    ? 'Goteo'
-                    : project.category === 'aspersion'
-                      ? 'Aspersión'
-                      : project.category === 'microaspersion'
-                        ? 'Microaspersión'
-                        : project.category === 'inundacion'
-                          ? 'Inundación'
-                          : project.category === 'pivote'
-                            ? 'Pivote Central'
-                            : ''}
+                  {project.category === 'aspersion'
+                    ? 'Aspersión'
+                    : project.category === 'tapon'
+                      ? 'Tapón Perforado'
+                      : project.category === 'microtubo'
+                        ? 'Microtubo'
+                        : ''}
                 </span>
               </div>
 
@@ -221,17 +215,13 @@ const categories = [
                 </p>
                 <p class="text-gray-700">{project.description}</p>
                 <span class="block mt-4 bg-primary/10 text-primary text-xs px-3 py-1 rounded-full font-medium w-max">
-                  {project.category === 'riego-goteo'
-                    ? 'Goteo'
-                    : project.category === 'aspersion'
-                      ? 'Aspersión'
-                      : project.category === 'microaspersion'
-                        ? 'Microaspersión'
-                        : project.category === 'inundacion'
-                          ? 'Inundación'
-                          : project.category === 'pivote'
-                            ? 'Pivote Central'
-                            : ''}
+                  {project.category === 'aspersion'
+                    ? 'Aspersión'
+                    : project.category === 'tapon'
+                      ? 'Tapón Perforado'
+                      : project.category === 'microtubo'
+                        ? 'Microtubo'
+                        : ''}
                 </span>
               </ModalBody>
               <ModalFooter>
