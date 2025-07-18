@@ -202,11 +202,27 @@ const categories = [
                   alt={project.title}
                   class="w-full h-50 object-cover rounded mb-4"
                 />
-                <img
-                  src={project.description_image}
-                  alt={project.title}
-                  class="w-full h-50 object-cover rounded mb-4"
-                />
+                {project.description_image && (
+                  <img
+                    src={project.description_image}
+                    alt={project.title}
+                    class="w-full h-50 object-cover rounded mb-4"
+                  />
+                )}
+
+                {project.video && (
+                  <div class="mb-4 aspect-video">
+                    <iframe
+                      src={project.video}
+                      class="w-full h-full rounded-lg shadow-lg"
+                      frameborder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowfullscreen
+                      title={`Video de ${project.title}`}
+                    />
+                  </div>
+                )}
+
                 <p class="text-gray-500 text-sm mb-2">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -231,18 +247,6 @@ const categories = [
                   {project.location}
                 </p>
 
-                {project.video && (
-                  <div class="mb-4 aspect-video">
-                    <iframe
-                      src={project.video}
-                      class="w-full h-full rounded-lg shadow-lg"
-                      frameborder="0"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowfullscreen
-                      title={`Video de ${project.title}`}
-                    />
-                  </div>
-                )}
                 <p class="text-gray-700 whitespace-pre-line">
                   {project.description}
                 </p>
