@@ -72,18 +72,35 @@ Gracias a esta solución, se garantizó un suministro constante de alimento para
   {
     title: 'Cultivo de pasto y pastoreo',
     location: 'Calamar, Bolivar',
-    description:
-      'Proyecto desarrollado en 15 hectáreas dedicadas al pastoreo, en una zona afectada por fuertes periodos de sequía. Se implementó un sistema de riego por aspersión tipo cañón, ideal para grandes extensiones y terrenos planos.',
+    description: `Proyecto desarrollado en 15 hectáreas dedicadas al pastoreo, en una zona afectada por fuertes periodos de sequía. Se implementó un sistema de riego por aspersión tipo cañón, ideal para grandes extensiones y terrenos planos, logrando:
+
+• Cobertura total del área con distribución uniforme del agua
+
+• Ahorro significativo en costos de mantenimiento y operación
+
+• Optimización del 100% en la producción de forraje para el ganado
+
+Gracias a esta solución, se garantizó la disponibilidad constante de alimento, mejorando la sostenibilidad y productividad del sistema ganadero.`,
     category: 'aspersion',
     image: '/riego3.webp',
+    video: 'https://www.youtube.com/embed/rPtOYMcadEI?si=Kcs8dPROf6mCr8T1',
   },
   {
     title: 'Cultivo de palma de aceite',
     location: 'Algarrobo, Magdalena',
-    description:
-      'En una plantación de 30 hectáreas de palma de aceite afectada por sequías frecuentes, se implementó un sistema de riego por microtubo, el cual permite aplicar el agua exclusivamente sobre la planta, evitando el riego de malezas y reduciendo el desperdicio.',
+    description: `En una plantación de 30 hectáreas de palma de aceite afectada por sequías frecuentes, se implementó un sistema de riego por microtubo, el cual dirige el agua directamente al pie de cada planta. Esta solución permitió:
+
+• Ahorro de hasta un 60% en el uso de agua
+
+• Mayor eficiencia en la absorción del recurso por parte de la planta
+
+• Mejora significativa en el desarrollo de las palmas y su productividad
+
+Este tipo de riego localizado garantiza un uso responsable del agua y fortalece la producción en zonas con estrés hídrico.`,
     category: 'microtubo',
     image: '/riego4.webp',
+    video: 'https://www.youtube.com/embed/CUh7hCgbGek?si=4dbwPsxEHOPeRTiI',
+    aux_video: 'https://youtube.com/embed/r5VHOZuPISE?feature=share',
   },
 ];
 
@@ -236,6 +253,19 @@ const categories = [
                   <div class="mb-4 aspect-video">
                     <iframe
                       src={project.video}
+                      class="w-full h-full rounded-lg shadow-lg"
+                      frameborder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowfullscreen
+                      title={`Video de ${project.title}`}
+                    />
+                  </div>
+                )}
+
+                {project.aux_video && (
+                  <div class="mb-4 aspect-video">
+                    <iframe
+                      src={project.aux_video}
                       class="w-full h-full rounded-lg shadow-lg"
                       frameborder="0"
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
