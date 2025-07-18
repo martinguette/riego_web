@@ -6,7 +6,7 @@
   href="https://wa.me/573113247004?text=Hola,%20estoy%20interesado%20en%20sus%20servicios%20de%20riego%20agrícola."
   target="_blank"
   rel="noopener noreferrer"
-  class="fixed bottom-6 right-6 z-50 bg-green-500 hover:bg-green-600 text-white rounded-full p-3.5 shadow-lg transition-all duration-300 hover:scale-110"
+  class="fixed bottom-6 right-6 z-50 bg-green-500 hover:bg-green-600 text-white rounded-full p-3.5 shadow-lg transition-all duration-300 hover:scale-110 whatsapp-float-btn"
   aria-label="Contactar por WhatsApp"
 >
   <svg
@@ -20,3 +20,21 @@
     ></path>
   </svg>
 </a>
+
+<style>
+  @media (max-width: 640px) {
+    .whatsapp-float-btn {
+      right: 1rem !important;
+      bottom: 1rem !important;
+      max-width: 56px;
+      max-height: 56px;
+      padding: 0.75rem !important;
+    }
+  }
+  .whatsapp-float-btn {
+    /* Prevenir que sobresalga del viewport */
+    max-width: 64px;
+    max-height: 64px;
+    box-sizing: border-box;
+  }
+</style>
