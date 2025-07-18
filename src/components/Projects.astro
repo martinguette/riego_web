@@ -231,7 +231,12 @@ const categories = [
             </div>
 
             {/* Modal para este proyecto */}
-            <Modal id={`modal-proyecto-${index}`} size="2xl" tabindex="-1">
+            <Modal
+              id={`modal-proyecto-${index}`}
+              size="2xl"
+              tabindex="-1"
+              class="z-60"
+            >
               <ModalHeader>
                 <h4>{project.title}</h4>
               </ModalHeader>
@@ -343,6 +348,7 @@ const categories = [
   document.addEventListener('DOMContentLoaded', () => {
     const filterBtns = document.querySelectorAll('.filter-btn');
     const projectItems = document.querySelectorAll('.project-item');
+    const whatsappBtn = document.querySelector('.whatsapp-float-btn');
 
     // Set "Todos" as active by default
     const allButton = document.querySelector('[data-category="todos"]');
@@ -371,12 +377,38 @@ const categories = [
             category === 'todos' ||
             item.getAttribute('data-category') === category
           ) {
-            item.style.display = 'block';
+            if (item instanceof HTMLElement) item.style.display = 'block';
           } else {
-            item.style.display = 'none';
+            if (item instanceof HTMLElement) item.style.display = 'none';
           }
         });
       });
+    });
+
+    // Ocultar botón de WhatsApp cuando un modal está abierto
+    document.querySelectorAll('[data-modal-trigger]').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        if (whatsappBtn && whatsappBtn instanceof HTMLElement)
+          whatsappBtn.style.display = 'none';
+      });
+    });
+    document.querySelectorAll('[data-modal-close]').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        if (whatsappBtn && whatsappBtn instanceof HTMLElement)
+          whatsappBtn.style.display = '';
+      });
+    });
+    // También restaurar al presionar Escape
+    document.addEventListener('keydown', (e) => {
+      if (
+        e.key === 'Escape' &&
+        whatsappBtn &&
+        whatsappBtn instanceof HTMLElement
+      ) {
+        setTimeout(() => {
+          whatsappBtn.style.display = '';
+        }, 100);
+      }
     });
   });
 
