@@ -320,20 +320,29 @@
   </div>
 
   <script>
-    // Form submission handling
     document.addEventListener('DOMContentLoaded', () => {
       const contactForm = document.getElementById('contact-form');
 
       contactForm?.addEventListener('submit', (e) => {
         e.preventDefault();
 
-        // In a real implementation, this would send the form data to a server
-        alert(
-          '¡Gracias por su mensaje! En una implementación real, su solicitud sería enviada y un especialista se pondría en contacto con usted pronto.'
-        );
+        // Obtén los valores del formulario
+        const nombre = contactForm.nombre.value;
+        const telefono = contactForm.telefono.value;
+        const email = contactForm.email.value;
+        const mensaje = contactForm.mensaje.value;
 
-        // Reset form
-        contactForm.reset();
+        // Construye el mensaje para WhatsApp
+        const texto = `Hola, me gustaría solicitar una consulta gratuita.%0A%0A*Nombre:* ${nombre}%0A*Teléfono:* ${telefono}%0A*Correo:* ${email}%0A*Detalles:* ${mensaje}`;
+
+        // Número de WhatsApp (sin +, sin espacios)
+        const numero = '573113247004';
+
+        // Construye la URL de WhatsApp
+        const url = `https://wa.me/${numero}?text=${texto}`;
+
+        // Redirige a WhatsApp
+        window.open(url, '_blank');
       });
     });
   </script>
